@@ -12,7 +12,7 @@
     
 int main(int argc, char *argv){
     char maxBuffer[]="Hello World";
-    int sockfd, clientfd;
+    int sockfd, clientfd,clientLen;
     struct sockaddr_in servaddr,clientAddress;
 
 //-------SOCKER-arxikopoiisi--------------------------------------    
@@ -54,19 +54,21 @@ int main(int argc, char *argv){
            printf("Listen is correct.");
         }
 //------ACCEPT------
-/*
+   /*
+    clientLen = sizeof(clientAddress);
     if ((accept(sockfd,(struct servaddr_in *)&clientAddress,sizeof(clientAddress.sin_zero))<0))
         {
-            printf("DieWithError accept() failed.\n");    /* code 
+            printf("DieWithError accept() failed.\n");    // code 
             exit(0);
         }
     else
         {
             printf("Accepted");
         }
- */  
+ */
     while(1){
-        if(clientfd=(clientaccept(sockfd,(struct servaddr_in *)&clientAddress,sizeof(clientAddress.sin_zero)))<0)
+        clientLen = sizeof(clientAddress);
+        if(clientfd=(accept(sockfd,(struct servaddr_in *)&clientAddress,&clientLen))<0)
         {
             printf("DieWithError accept() failed.\n");
             exit(-1);
