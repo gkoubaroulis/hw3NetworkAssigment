@@ -7,7 +7,7 @@
 #include<sys/socket.h>
 
 #define MAX 80
-#define servPort  8180    
+#define servPort  2019    
 #define MAXPENDING 5
     
 int main(int argc, char *argv){
@@ -42,7 +42,7 @@ int main(int argc, char *argv){
 //-------BIND------------------------------------------
 	// assign IP, PORT 
 	servaddr.sin_family = AF_INET; 
-	servaddr.sin_addr.s_addr = htonl(INADDR_ANY); 
+	servaddr.sin_addr.s_addr = htonl("127.0.0.1");//INADDR_ANY); 
 	servaddr.sin_port = htons(servPort); 
 //int bind (int sockfd, struct sockaddr *myaddr, int addrlen)
     if ((bind(sockfd, (struct sockaddr_in *) &servaddr, sizeof(servaddr))) < 0) { 
