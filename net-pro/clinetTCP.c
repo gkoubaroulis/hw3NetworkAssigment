@@ -53,7 +53,7 @@ int main(int argc, char *argv){
     
     
     
-    if(listen(sockfd,MAXPENDING)<0)
+    if(listen(clientfd,MAXPENDING)<0)
         {
             printf("DieWithError listen() failed....\n");
             exit(0);
@@ -75,7 +75,7 @@ int main(int argc, char *argv){
         }
  */  
     while(1){
-        if(clientfd=(clientaccept(sockfd,(struct servaddr_in *)&clientAddress,sizeof(clientAddress.sin_zero)))<0)
+        if(clientfd=(clientaccept(clientfd,(struct servaddr_in *)&clientAddress,sizeof(clientAddress.sin_zero)))<0)
         {
             printf("DieWithError accept() failed.\n");
             exit(-1);
@@ -86,7 +86,7 @@ int main(int argc, char *argv){
         
         close(clientfd);
         }
-        close(sockfd); //close the socket
+        close(clientfd); //close the socket
     
     
     
