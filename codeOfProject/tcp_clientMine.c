@@ -26,7 +26,7 @@ int main(int argc, char *argv){
     };
     */
     if(argc!=2){
-        printf("Usage: %s <ipaddress>\n",argv[0]);
+        printf("Usage: %d <ipaddress>\n",argv[0]);
     }
 //-------SOCKER-arxikopoiisi--------------------------------------    
     sockfd=socket(AF_INET,SOCK_STREAM,0);
@@ -36,7 +36,7 @@ int main(int argc, char *argv){
     }
     else
     {
-        printf("Socket created with id= %s \n",sockfd);
+        printf("Socket created with id= %d \n",sockfd);
     }
     ;
 //-------BIND------------------------------------------

@@ -1,33 +1,3 @@
-/*
-Clinet stages
-
-1. socket       Create Socket;
-clinetSock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)
-if(clinetSock < 0){
-    DieWithError("socket() failed")
-}
-
-2. connect      establish connection
-
-clinetConnect=connect(clinetSock,(struct sockaddr *) &echoServAddr, sizeof(echoServAddr))
-if(clinetConnect<0){
-    DieWithError("connect() failed")
-}
-
-3. send         write data to communicate
-
-echoStringLen = strlen(echoString);
-
-echoLength = send(clientSock,echoString,echoStringLen,0)
-if(echoLength != echoStingLen){
-    DieWithError("send() sent a different number of bytes than expected")
-}
-
-
-4. read         communincate
-5. close        close connection
-
-*/
 #include <netdb.h> 
 #include <stdio.h> 
 #include <stdlib.h> 
