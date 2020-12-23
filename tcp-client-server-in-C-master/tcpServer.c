@@ -8,7 +8,7 @@
 
 #define PORT 4444
 
-void main(){
+int main(){
 
 	int sockfd;
 	struct sockaddr_in serverAddr;
@@ -39,6 +39,6 @@ void main(){
 	send(newSocket, buffer, strlen(buffer), 0);
 	printf("[+]Closing the connection.\n");
 
-
+	return 0;
 
 }

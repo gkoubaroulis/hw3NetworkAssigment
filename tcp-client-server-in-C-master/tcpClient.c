@@ -8,7 +8,7 @@
 
 #define PORT 4444
 
-void main(){
+int main(){
 	
 	int clientSocket;
 	struct sockaddr_in serverAddr;
@@ -28,5 +28,5 @@ void main(){
 	recv(clientSocket, buffer, 1024, 0);
 	printf("[+]Data Recv: %s\n", buffer);
 	printf("[+]Closing the connection.\n");
-
+	return 0;
 }
